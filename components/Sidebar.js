@@ -14,16 +14,10 @@ import SidebarLink from "./SidebarLink";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 
-import { useRouter } from "next/router";
-
     
 function Sidebar() {
   const { data: session } = useSession();
-
-  const router = useRouter();
-  //if (!session) return <Login providers={providers} />;
-  if (!session) router.push('/');
-
+  
   return (
     <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full">
       <div className="flex items-center justify-center w-14 h-14 hoverAnimation p-0 xl:ml-24">
